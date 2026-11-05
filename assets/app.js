@@ -42,7 +42,10 @@
     '<span><b>' + D.stats.ips + '</b> 个 IP</span>' +
     '<span><b>' + D.stats.characters + '</b> 位角色</span>' +
     '<span><b>' + D.stats.images + '</b> 张图片</span>';
-  document.getElementById('generated').textContent = D.generated;
+  document.getElementById('generated').textContent = (function (s) {
+    var m = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})$/.exec(s || '');
+    return m ? m[1] + '年' + m[2] + '月' + m[3] + '日 ' + m[4] + ':' + m[5] : s;
+  })(D.generated);
   document.getElementById('chips').innerHTML =
     '<button class="chip active" type="button" data-ip="all">全部 <i>' + D.stats.characters + '</i></button>' +
     D.ips.map(function (ip) {
@@ -151,6 +154,19 @@
     for (var i = 0; i < all.length; i++) all[i].classList.toggle('active', all[i] === b);
     draw();
   });
+  /* 鼠标滚轮在 IP 分类条上横向滚动；滚到两端时把滚动交还给页面 */
+  var chipsEl = document.getElementById('chips');
+  chipsEl.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+    var max = chipsEl.scrollWidth - chipsEl.clientWidth;
+    if (max <= 1) return;
+    var atStart = chipsEl.scrollLeft <= 1;
+    var atEnd = chipsEl.scrollLeft >= max - 1;
+    if ((e.deltaY < 0 && atStart) || (e.deltaY > 0 && atEnd)) return;
+    e.preventDefault();
+    chipsEl.scrollLeft = Math.max(0, Math.min(max, chipsEl.scrollLeft + e.deltaY));
+  }, { passive: false });
+
   document.getElementById('theme').addEventListener('click', function () {
     state.theme = state.theme === 'dark' ? 'light' : 'dark';
     setTheme(state.theme);
