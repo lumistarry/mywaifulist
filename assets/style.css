@@ -113,7 +113,7 @@ code { font-size: .95em; color: var(--muted); }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(178px, 1fr)); gap: 14px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color .15s; }
 .card:hover { border-color: var(--accent); }
-.card-media { position: relative; aspect-ratio: 3 / 4; background: var(--surface-2); overflow: hidden; }
+.card-media { position: relative; aspect-ratio: 1 / 1; background: var(--surface-2); overflow: hidden; }
 .card-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .ph { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background: var(--surface-2); color: var(--muted); }
 .ph span { font-size: 38px; font-weight: 600; opacity: .3; }
@@ -146,7 +146,7 @@ code { font-size: .95em; color: var(--muted); }
 }
 .expand:hover { background: var(--surface-2); }
 .inline-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; padding: 9px; border-top: 1px solid var(--border); }
-.inline-gallery img, .inline-gallery .ph { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 5px; }
+.inline-gallery img, .inline-gallery .ph { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 5px; }
 .inline-gallery .ph span { font-size: 20px; }
 
 .empty { padding: 80px 0; text-align: center; font-size: 13px; color: var(--muted); }
