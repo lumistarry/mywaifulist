@@ -57,12 +57,18 @@
     return '<div class="ph"><span>' + esc(ch.name.slice(0, 1)) + '</span></div>';
   }
 
+  /* 图片先只输出占位块与 data-src，等文字就绪后由 assets/images.js 自动加载 */
+  function pendingHtml(ch, src, i, cls) {
+    var alt = esc(ch.name + ' 第 ' + (i + 1) + ' 张');
+    return '<div class="ph ph-pending ' + (cls || '') + '" data-src="' + esc(src) +
+      '" data-alt="' + alt + '" data-id="' + esc(ch.id) + '" role="img" aria-label="' + alt +
+      '"><span>' + esc(ch.name.slice(0, 1)) + '</span></div>';
+  }
+
   function mediaInner(ch, s) {
     var imgs = ch.images || [];
     if (!imgs.length) return placeholder(ch) + '<span class="badge">0 张</span>';
-    var html =
-      '<img src="' + esc(imgs[s.i]) + '" alt="' + esc(ch.name) + ' 第 ' + (s.i + 1) +
-      ' 张" loading="lazy" decoding="async" data-id="' + esc(ch.id) + '">' +
+    var html = pendingHtml(ch, imgs[s.i], s.i) +
       '<span class="badge">' + imgs.length + ' 张</span>';
     if (imgs.length > 1) {
       html +=
@@ -79,8 +85,7 @@
   function galleryHtml(ch) {
     var imgs = ch.images || [];
     return '<div class="inline-gallery">' + imgs.map(function (src, i) {
-      return '<img src="' + esc(src) + '" alt="' + esc(ch.name) + ' 第 ' + (i + 1) +
-        ' 张" loading="lazy" decoding="async" data-id="' + esc(ch.id) + '">';
+      return pendingHtml(ch, src, i, 'mini');
     }).join('') + '</div>';
   }
 

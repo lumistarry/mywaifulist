@@ -150,6 +150,9 @@ code { font-size: .95em; color: var(--muted); }
 .inline-gallery img, .inline-gallery .ph { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 5px; }
 .inline-gallery .ph span { font-size: 20px; }
 
+.is-loaded { animation: img-in .28s ease both; }
+@keyframes img-in { from { opacity: 0; } to { opacity: 1; } }
+
 .empty { padding: 80px 0; text-align: center; font-size: 13px; color: var(--muted); }
 .foot { padding-top: 28px; padding-bottom: 48px; margin-top: 36px; border-top: 1px solid var(--border); font-size: 11.5px; color: var(--muted); }
 .foot time { font-variant-numeric: tabular-nums; }
