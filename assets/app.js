@@ -57,9 +57,14 @@
     return '<div class="ph"><span>' + esc(ch.name.slice(0, 1)) + '</span></div>';
   }
 
-  /* 图片先只输出占位块与 data-src，等文字就绪后由 assets/images.js 自动加载 */
+  /* 未加载过的图片输出占位块 + data-src，由 assets/images.js 延后加载；
+     已加载过的直接输出 img，切换分类重绘时不会重新加载或重新淡入 */
   function pendingHtml(ch, src, i, cls) {
     var alt = esc(ch.name + ' 第 ' + (i + 1) + ' 张');
+    if (window.DeferredImages && window.DeferredImages.isLoaded(src)) {
+      return '<img class="is-ready" src="' + esc(src) + '" alt="' + alt +
+        '" decoding="async" data-id="' + esc(ch.id) + '">';
+    }
     return '<div class="ph ph-pending ' + (cls || '') + '" data-src="' + esc(src) +
       '" data-alt="' + alt + '" data-id="' + esc(ch.id) + '" role="img" aria-label="' + alt +
       '"><span>' + esc(ch.name.slice(0, 1)) + '</span></div>';

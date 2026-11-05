@@ -36,6 +36,12 @@
     pump();
   }
 
+  /* 记住已成功加载的图片，供列表重绘时直接复用，避免切换分类后重新加载/淡入 */
+  var loaded = Object.create(null);
+  window.DeferredImages = {
+    isLoaded: function (src) { return !!loaded[src]; }
+  };
+
   function show(el, src) {
     var img = document.createElement('img');
     img.src = src;
@@ -43,6 +49,7 @@
     img.decoding = 'async';
     img.className = 'is-loaded';
     img.dataset.id = el.getAttribute('data-id') || '';
+    loaded[src] = 1;
     el.replaceWith(img);
   }
 
