@@ -1,8 +1,8 @@
 window.SITE_DATA = {
-  "generated": "2026-11-05 19:34",
+  "generated": "2026-11-05 21:58",
   "stats": {
     "ips": 20,
-    "characters": 147,
+    "characters": 148,
     "with_images": 6,
     "images": 8
   },
@@ -563,6 +563,13 @@ window.SITE_DATA = {
           "name": "幼熙",
           "tag": "",
           "folder": "11-幼熙",
+          "images": []
+        },
+        {
+          "id": "c_0995e745",
+          "name": "夏克里",
+          "tag": "",
+          "folder": "12-夏克里",
           "images": []
         }
       ]
