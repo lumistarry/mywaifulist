@@ -1,10 +1,10 @@
 window.SITE_DATA = {
-  "generated": "2026-11-05 19:03",
+  "generated": "2026-11-05 19:34",
   "stats": {
     "ips": 20,
     "characters": 147,
-    "with_images": 0,
-    "images": 0
+    "with_images": 6,
+    "images": 8
   },
   "intro": [
     "这是Waifu List，不是喜欢的角色list，喜欢的角色太多太多了",
@@ -44,7 +44,9 @@ window.SITE_DATA = {
           "name": "奥黛塔",
           "tag": "",
           "folder": "04-奥黛塔",
-          "images": []
+          "images": [
+            "images/%E5%8E%9F%E7%A5%9E/04-%E5%A5%A5%E9%BB%9B%E5%A1%94/IMG_1865..JPG"
+          ]
         },
         {
           "id": "c_862c2a86",
@@ -320,7 +322,9 @@ window.SITE_DATA = {
           "name": "达妮娅",
           "tag": "",
           "folder": "01-达妮娅",
-          "images": []
+          "images": [
+            "images/%E9%B8%A3%E6%BD%AE/01-%E8%BE%BE%E5%A6%AE%E5%A8%85/IMG_2172..JPG"
+          ]
         },
         {
           "id": "c_aef9a96f",
@@ -433,14 +437,18 @@ window.SITE_DATA = {
           "name": "伊洛伊",
           "tag": "",
           "folder": "02-伊洛伊",
-          "images": []
+          "images": [
+            "images/%E5%BC%82%E7%8E%AF/02-%E4%BC%8A%E6%B4%9B%E4%BC%8A/IMG_2030..JPG"
+          ]
         },
         {
           "id": "c_d74fda2f",
           "name": "安魂曲",
           "tag": "",
           "folder": "03-安魂曲",
-          "images": []
+          "images": [
+            "images/%E5%BC%82%E7%8E%AF/03-%E5%AE%89%E9%AD%82%E6%9B%B2/IMG_2029..JPG"
+          ]
         },
         {
           "id": "c_bc6b71da",
@@ -518,7 +526,9 @@ window.SITE_DATA = {
           "name": "伊格蕾塔",
           "tag": "",
           "folder": "06-伊格蕾塔",
-          "images": []
+          "images": [
+            "images/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF2%E8%BF%BD%E6%94%BE/06-%E4%BC%8A%E6%A0%BC%E8%95%BE%E5%A1%94/IMG_1779..JPG"
+          ]
         },
         {
           "id": "c_b40f2eaa",
@@ -681,7 +691,11 @@ window.SITE_DATA = {
           "name": "祀",
           "tag": "",
           "folder": "01-祀",
-          "images": []
+          "images": [
+            "images/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E7%BB%88%E6%9C%AB%E5%9C%B0/01-%E7%A5%80/IMG_6411..JPG",
+            "images/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E7%BB%88%E6%9C%AB%E5%9C%B0/01-%E7%A5%80/IMG_6412..JPG",
+            "images/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E7%BB%88%E6%9C%AB%E5%9C%B0/01-%E7%A5%80/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-11-05%20192904.png"
+          ]
         },
         {
           "id": "c_558bcccc",
